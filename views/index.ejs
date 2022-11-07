@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs'); %>
+
+<body>
+    <%- include('./partials/nav.ejs') %> 
+    <section>
+        <div>
+    <p>
+    -Coming Soon
+    </p>
+  <h1>Get Notified <br> When we Launch</h1>
+
+    <form method="POST" action="/send">
+           
+          <input type="email" name="email" id="email" placeholder="Please Type In Your Email">
+          <button class="btn" >Submit</button>
+            
+    </form>
+    <p>* Dont worry we wil not spam you :)</p>
+</div>
+
+<div>
+    <img id="avatar" src="/avatar2.png">
+</div>
+
+</section>
+
+
+    <%- include("./partials/footer.ejs") %> 
+</body>
+
+</html>
