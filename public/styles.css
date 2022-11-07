@@ -17,7 +17,7 @@ nav{
     justify-content: space-between;
 }
 
-section{
+#meil{
     display: flex;
     justify-content: space-between;
 }
@@ -75,12 +75,23 @@ footer{
         color: black;
         padding: 5px 10px;
     }
+    div#socials-div{
+        display: flex;
+        justify-content: space-between;
+    }
 
-  a#socials{
+  div#socials{
       border: 1px solid #0892d0;
-     
-     
-      border-radius: 50%;
-      height: 20px;
 
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+     
+
+    }
+
+    #error{
+        background: url('lost.jpg');
+        background-size: cover;
+        height: 110vh;
     }
