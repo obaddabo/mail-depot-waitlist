@@ -1,7 +1,7 @@
 
 const express = require('express');
 const mongoose = require('mongoose');
-
+const Email = require('./model/email')
 const app = express();
 app.use(express.static('public'))
 app.set("view engine", 'ejs' )
@@ -13,6 +13,14 @@ mongoose.connect('mongodb+srv://engnrobad:engnrobad@bloggr.6qgvbcc.mongodb.net/?
         console.log('Db Conected');
      
 })
+.then((req,res)=>{
+        console.log('Connected')
+        
+})
+.catch((err)=>{
+        console,log(err)
+});
+
 
 app.get('/', (req, res)=>{
         res.render('index', { title : "Home"});
@@ -21,15 +29,28 @@ app.get('/', (req, res)=>{
 
 
 app.post('/', (req, res)=>{
-        req.body.email;
+  
+        console.log(req.body);
+        const emaillist = new Email(req.body);
+        emaillist.save()
+        .then((result)=>{
+                res.send(result);
+
+                
+        app.get('/sent', (req, res)=>{
+        res.render('sent')
+    });
+        })
+        .catch((err)=>{
+                console.log(err);
+                
+        })
 
         res.redirect('/sent')
+        
 });
 
 
-app.get('/sent', (req, res)=>{
-    res.render('sent')
-});
 
 app.get('/privacy', (req,res)=>{
         res.render('privacy')

@@ -1,14 +1,18 @@
 const mongoose  = require("mongoose");
 const { stringify } = require("querystring");
-const Schema = mongoose.Schema();
+const Schema = mongoose.Schema;
+
+const emailschema = new Schema({
+  email :{
+    type : String,
+    required : true
+  }
+})
 
 
 
-const emailSchema = new Schema({
-    email : {
-        type : string, 
-        required : true
-    }
-});
 
-const Email = mongoose.model('Email', emailSchema);
+const Email = mongoose.model('Email', emailschema);
+
+module.exports = Email;
+
