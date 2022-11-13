@@ -7,18 +7,16 @@ app.use(express.static('public'))
 app.set("view engine", 'ejs' )
 app.use(express.urlencoded({ extended : true}))
 
+ const uri = 'mongodb+srv://engnrobad:bloggr@waitlist.6qgvbcc.mongodb.net/?retryWrites=true&w=majority';
 
 
-mongoose.connect('mongodb+srv://engnrobad:engnrobad@bloggr.6qgvbcc.mongodb.net/?retryWrites=true&w=majority', (req, res)=>{
-        console.log('Db Conected');
-     
-})
+mongoose.connect(uri, {UseNewURLParser : true, UseUnifiedTopology : true} )
 .then((req,res)=>{
         console.log('Connected')
         
 })
 .catch((err)=>{
-        console,log(err)
+        console.log(err)
 });
 
 
@@ -26,7 +24,10 @@ app.get('/', (req, res)=>{
         res.render('index', { title : "Home"});
 }
 );
-
+app.get('/sent', (req, res)=>{
+        res.render('sent' , {title : "Sent"})
+    });
+        
 
 app.post('/', (req, res)=>{
   
@@ -36,19 +37,13 @@ app.post('/', (req, res)=>{
         .then((result)=>{
                 res.send(result);
 
-                
-        app.get('/sent', (req, res)=>{
-        res.render('sent')
-    });
+                res.redirect('/sent')
         })
-        .catch((err)=>{
-                console.log(err);
-                
-        })
-
-        res.redirect('/sent')
+.catch((err)=>{
+        console.log(err);
         
-});
+})
+})
 
 
 

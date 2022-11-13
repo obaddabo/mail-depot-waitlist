@@ -64,7 +64,8 @@ footer{
     }
     .btn:hover{
         cursor: pointer;
-    }
+        background: none;
+        border: 1px solid #0892d0;   }
     .Brand-name{
         font-family: 'Poppins';
     }
@@ -90,4 +91,9 @@ footer{
 
     }
 
-  
+
+    /* Media Queries */
+
+    
+
+    
