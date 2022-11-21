@@ -35,7 +35,7 @@ app.post('/', (req, res)=>{
         const emaillist = new Email(req.body);
         emaillist.save()
         .then((result)=>{
-                res.send(result);
+               res.render('sent');
 
                 res.redirect('/sent')
         })

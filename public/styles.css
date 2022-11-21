@@ -93,7 +93,26 @@ footer{
 
 
     /* Media Queries */
+/* Tablet */
+    @media screen and(min-width:768px) {
+        
+    }
+/* mobile large */
+    @media screen and(min-width:425px) {
+        
+    }
+/* mobile medium */
+@media screen and(min-width:375px) {
+        
+}
+/* mobile small */
+@media screen and(min-width:320px) {
+        
+}
+/* 4k */
 
-    
+@media screen and(min-width:2560px) {
+        
+}
 
     
